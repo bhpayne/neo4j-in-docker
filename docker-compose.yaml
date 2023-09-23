@@ -15,17 +15,13 @@ services:
   neo4j_docker:
     image: neo4j:4.4.26-community
     restart: unless-stopped
-
     hostname: neo4j_host
-
     #network_mode: "bridge"
     # https://stackoverflow.com/a/48637671/1164295
     networks:
       neo4j-internal:
         aliases:
           - neo4j-network
-
-
     # The ports that will be accessible from outside the container
     # 7474=HTTP, 7473=HTTPS, 7687=Bolt; as per https://neo4j.com/developer/docker-run-neo4j/
     ports:
@@ -38,7 +34,7 @@ services:
       - './neo4j_docker/logs:/var/lib/neo4j/logs'
       - './neo4j_docker/conf:/var/lib/neo4j/conf'
       - './neo4j_docker/plugins:/var/lib/neo4j/plugins'
-      - './results:/var/lib/neo4j/resultss'
+      - './results:/var/lib/neo4j/results'
     # https://docs.docker.com/compose/compose-file/compose-file-v3/#environment
     # see https://neo4j.com/docs/operations-manual/current/docker/ref-settings/
     # https://community.neo4j.com/t/docker-compose-setting-for-apoc-installation/11621/9
