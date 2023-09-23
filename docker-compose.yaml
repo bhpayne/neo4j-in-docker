@@ -54,7 +54,7 @@ services:
       - NEO4J_apoc_import_file_use__neo4j__config=true
       - NEO4J_dbms_directories_import=dumping_grounds # relative to /var/lib/neo4j
       - NEO4J_dbms_security_procedures_allowlist=gds.*, apoc.*
-      - NEO4JLABS_PLUGINS=["apoc"] # downloads from gitlab everytime the container is started
+      #- NEO4JLABS_PLUGINS=["apoc"] # downloads from gitlab everytime the container is started
     # https://stackoverflow.com/a/74689805/1164295
     healthcheck:
       test: wget http://localhost:7474 || exit 1
